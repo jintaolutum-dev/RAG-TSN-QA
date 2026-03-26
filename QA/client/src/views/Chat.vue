@@ -36,8 +36,8 @@
       <!-- Message list -->
       <div class="chat-messages" ref="messagesRef">
         <div v-if="messages.length === 0" class="welcome">
-          <el-icon :size="64" color="#c0c4cc"><ChatDotSquare /></el-icon>
-          <h3>Welcome to the Enterprise Knowledge Base QA System</h3>
+          <img src="../assets/icons/TSN.svg" class="logo-icon" />
+          <h3>Welcome to the Network Knowledge Base QA System</h3>
           <p>Select a knowledge base on the left, then enter your question</p>
         </div>
         <ChatMessage v-for="(msg, i) in messages" :key="i" :message="msg" />
@@ -175,6 +175,14 @@ onMounted(() => loadKBList())
 </script>
 
 <style scoped>
+.logo-icon {
+  width: 400px;
+  height: 400pxpxpx;
+  display: block;
+  flex-shrink: 0;
+  color: #c5c4c4;
+}
+
 .chat-container {
   display: flex;
   height: calc(100vh - 100px);

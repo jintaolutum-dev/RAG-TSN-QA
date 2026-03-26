@@ -22,9 +22,15 @@ class VectorService:
 
     def __init__(self):
         """Initialize embedding model and text splitter"""
+        api_key = current_app.config.get('OPENAI_API_KEY', '').strip()
+        if not api_key or api_key == 'your_openai_api_key_here':
+            raise ValueError(
+                'OPENAI_API_KEY is not configured. Please set OPENAI_API_KEY in QA/server/.env'
+            )
+
         self.embeddings = OpenAIEmbeddings(
             model=current_app.config['OPENAI_EMBED_MODEL'],
-            api_key=current_app.config['OPENAI_API_KEY'],
+            api_key=api_key,
             base_url=current_app.config['OPENAI_BASE_URL']
         )
         # self.embeddings = OllamaEmbeddings(

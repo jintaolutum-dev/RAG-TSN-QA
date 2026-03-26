@@ -137,7 +137,7 @@ function handleCommand(command) {
   height: 80px;
   display: block;
   flex-shrink: 0;
-  color: #ffffff;
+  color: #e3dfdf;
 }
 
 .logo-icon :deep(svg) {

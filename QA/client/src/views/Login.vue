@@ -4,7 +4,7 @@
     <div class="login-card">
       <div class="login-header">
         <el-icon :size="40" color="#409eff"><ChatDotSquare /></el-icon>
-        <h2>Enterprise Knowledge Base QA System</h2>
+        <h2>Network Knowledge Base QA System</h2>
         <p class="subtitle">RAG-powered intelligent knowledge retrieval and QA platform</p>
       </div>
       <el-form

@@ -37,6 +37,12 @@ class RAGService:
 
     def __init__(self):
         """Initialize LLM and vector service"""
+        api_key = current_app.config.get('OPENAI_API_KEY', '').strip()
+        if not api_key or api_key == 'your_openai_api_key_here':
+            raise ValueError(
+                'OPENAI_API_KEY is not configured. Please set OPENAI_API_KEY in QA/server/.env'
+            )
+
         # self.llm = ChatOllama(
         #     model=current_app.config['OLLAMA_LLM_MODEL'],
         #     base_url=current_app.config['OLLAMA_BASE_URL'],
@@ -46,7 +52,7 @@ class RAGService:
         
         self.llm = ChatOpenAI(
             model=current_app.config['OPENAI_LLM_MODEL'],
-            openai_api_key=current_app.config['OPENAI_API_KEY'],
+            openai_api_key=api_key,
             base_url=current_app.config['OPENAI_BASE_URL'],
             temperature=0.3,
             timeout=3600
