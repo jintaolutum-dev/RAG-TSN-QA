@@ -1,0 +1,35 @@
+# --- Environment files ---
+.env
+.env.*
+!.env.example
+
+# --- Python ---
+venv/
+venv*/
+.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# --- Python tooling cache ---
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# --- Node / frontend ---
+node_modules/
+dist/
+coverage/
+
+# --- IDE / OS ---
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# --- Runtime data (do not commit) ---
+QA/server/chroma_data/
+QA/server/uploads/
